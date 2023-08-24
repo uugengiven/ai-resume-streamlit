@@ -25,8 +25,10 @@ except:
 if 'prompt' not in st.session_state:
     st.session_state.prompt = None
     logger.info("prompt set to none")
-logger.info("checking prompt state after check" + st.session_state.prompt)
-
+try:
+    logger.info("checking prompt state after check" + st.session_state.prompt)
+except:
+    pass
 
 @st.cache_resource(show_spinner=False)
 def load_data():
