@@ -67,7 +67,11 @@ if st.session_state.messages[-1]["role"] != "assistant":
             st.session_state.messages.append(message)
 
 if st.session_state.prompt != prompt:
-    logger.info('question ' + prompt + st.session_state.prompt)
+    if st.session_state.prompt is None:
+        logger.info("st prompt is none")
+    else:
+        logger.info(st.session_state.prompt)
+    logger.info('question ' + prompt)
     st.session_state.prompt = prompt
 
 logger.info(prompt)
