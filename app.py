@@ -70,4 +70,4 @@ if st.session_state.prompt != prompt:
     logger.info('question ' + prompt + st.session_state.prompt)
     st.session_state.prompt = prompt
 
-logger.info(prompt + st.session_state.prompt)
+logger.info(prompt)
