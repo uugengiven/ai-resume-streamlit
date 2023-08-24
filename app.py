@@ -42,6 +42,7 @@ chat_engine = index.as_chat_engine(
     )
 
 if prompt := st.chat_input("Your question"):
+    logger.info('question ' + prompt)
     st.session_state.messages.append({"role": "user", "content": prompt})
 
 for message in st.session_state.messages:
@@ -51,7 +52,6 @@ for message in st.session_state.messages:
 if st.session_state.messages[-1]["role"] != "assistant":
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
-            logger.info('message ' + st.session_state.messages[-1]["content"])
             response = chat_engine.chat(prompt)
             st.write(response.response)
             message = {"role": "assistant", "content": response.response}
