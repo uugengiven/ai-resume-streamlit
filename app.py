@@ -18,17 +18,12 @@ if "messages" not in st.session_state.keys():
     st.session_state.messages = [
         {"role": "assistant", "content": "What would you like to know about John Lange?"}
     ]
-try:
-    logger.info("checking prompt state" + st.session_state.prompt)
-except:
-    pass
+
+old_prompt = "old prompt"
+logger.info("old_prompt is " +old_prompt + " line 23")
+
 if 'prompt' not in st.session_state:
     st.session_state.prompt = None
-    logger.info("prompt set to none")
-try:
-    logger.info("checking prompt state after check" + st.session_state.prompt)
-except:
-    pass
 
 @st.cache_resource(show_spinner=False)
 def load_data():
@@ -67,14 +62,8 @@ if st.session_state.messages[-1]["role"] != "assistant":
             st.session_state.messages.append(message)
 
 if st.session_state.prompt != prompt:
-    if st.session_state.prompt is None:
-        logger.info("st prompt is none")
-    else:
-        logger.info(st.session_state.prompt)
-    try:
-        logger.info('question ' + prompt)
-    except:
-        pass
     st.session_state.prompt = prompt
 
-logger.info(prompt)
+if old_prompt != prompt:
+    old_prompt = prompt
+logger.info("last line" + prompt)
