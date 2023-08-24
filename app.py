@@ -4,7 +4,12 @@ from llama_index.llms import OpenAI
 import openai
 from llama_index import SimpleDirectoryReader
 from llama_index.memory import ChatMemoryBuffer
+import logging
+from opencensus.ext.azure.log_exporter import AzureEventHandler
 
+logger = logging.getLogger("Streamlit app")
+logger.setLevel(logging.INFO)
+logger.addHandler(AzureEventHandler(connection_string=st.secrets.azure_connection_string))
 
 openai.api_key = st.secrets.openai_key
 st.header("John Lange's Personal Historian")
@@ -18,10 +23,12 @@ if "messages" not in st.session_state.keys():
 @st.cache_resource(show_spinner=False)
 def load_data():
     with st.spinner(text="Loading and indexing John's history - give me a moment"):
+        logger.info('startup starting')
         reader = SimpleDirectoryReader(input_dir="./data", recursive=True)
         docs = reader.load_data()
         service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="You are an enthusastic assistant and an expert on John Lange. Assume that all questions are related to John Lange. Keep your answers based on facts - do not hallucinate facts."))
         index = VectorStoreIndex.from_documents(docs, service_context=service_context)
+        logger.info('startup complete')
         return index
 
 index = load_data()
@@ -44,6 +51,7 @@ for message in st.session_state.messages:
 if st.session_state.messages[-1]["role"] != "assistant":
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
+            logger.info('message ' + st.session_state.messages[-1]["content"])
             response = chat_engine.chat(prompt)
             st.write(response.response)
             message = {"role": "assistant", "content": response.response}
