@@ -66,7 +66,7 @@ if st.session_state.prompt != prompt:
 
 if old_prompt != prompt:
     old_prompt = prompt
-try:
-    logger.info("last line" + prompt)
-except:
-    pass
+    try:
+        logger.info("last line" + prompt)
+    except:
+        pass
