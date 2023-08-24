@@ -71,7 +71,10 @@ if st.session_state.prompt != prompt:
         logger.info("st prompt is none")
     else:
         logger.info(st.session_state.prompt)
-    logger.info('question ' + prompt)
+    try:
+        logger.info('question ' + prompt)
+    except:
+        pass
     st.session_state.prompt = prompt
 
 logger.info(prompt)
