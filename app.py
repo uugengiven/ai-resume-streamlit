@@ -19,6 +19,9 @@ if "messages" not in st.session_state.keys():
         {"role": "assistant", "content": "What would you like to know about John Lange?"}
     ]
 
+if 'prompt' not in st.session_state:
+    st.session_state.prompt = None
+
 
 @st.cache_resource(show_spinner=False)
 def load_data():
@@ -42,7 +45,6 @@ chat_engine = index.as_chat_engine(
     )
 
 if prompt := st.chat_input("Your question"):
-    logger.info('question ' + prompt)
     st.session_state.messages.append({"role": "user", "content": prompt})
 
 for message in st.session_state.messages:
@@ -56,3 +58,7 @@ if st.session_state.messages[-1]["role"] != "assistant":
             st.write(response.response)
             message = {"role": "assistant", "content": response.response}
             st.session_state.messages.append(message)
+
+if st.session_state.prompt != prompt:
+    logger.info('question ' + prompt)
+    st.session_state.prompt = prompt
