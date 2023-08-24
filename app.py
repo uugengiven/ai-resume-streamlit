@@ -18,9 +18,11 @@ if "messages" not in st.session_state.keys():
     st.session_state.messages = [
         {"role": "assistant", "content": "What would you like to know about John Lange?"}
     ]
-
+logger.info("checking prompt state" + st.session_state.prompt)
 if 'prompt' not in st.session_state:
     st.session_state.prompt = None
+    logger.info("prompt set to none")
+logger.info("checking prompt state after check" + st.session_state.prompt)
 
 
 @st.cache_resource(show_spinner=False)
@@ -60,5 +62,7 @@ if st.session_state.messages[-1]["role"] != "assistant":
             st.session_state.messages.append(message)
 
 if st.session_state.prompt != prompt:
-    logger.info('question ' + prompt)
+    logger.info('question ' + prompt + st.session_state.prompt)
     st.session_state.prompt = prompt
+
+logger.info(prompt + st.session_state.prompt)
