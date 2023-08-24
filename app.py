@@ -19,9 +19,6 @@ if "messages" not in st.session_state.keys():
         {"role": "assistant", "content": "What would you like to know about John Lange?"}
     ]
 
-old_prompt = "old prompt"
-logger.info("old_prompt is " +old_prompt + " line 23")
-
 if 'prompt' not in st.session_state:
     st.session_state.prompt = None
 
@@ -63,10 +60,7 @@ if st.session_state.messages[-1]["role"] != "assistant":
 
 if st.session_state.prompt != prompt:
     st.session_state.prompt = prompt
-
-if old_prompt != prompt:
-    old_prompt = prompt
-    try:
-        logger.info("last line" + prompt)
-    except:
-        pass
+    if st.session_state.prompt:
+        logger.info("st prompt = " + st.session_state.prompt)
+    if prompt:
+        logger.info(prompt)
