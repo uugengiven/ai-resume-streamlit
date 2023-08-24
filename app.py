@@ -18,7 +18,10 @@ if "messages" not in st.session_state.keys():
     st.session_state.messages = [
         {"role": "assistant", "content": "What would you like to know about John Lange?"}
     ]
-logger.info("checking prompt state" + st.session_state.prompt)
+try:
+    logger.info("checking prompt state" + st.session_state.prompt)
+except:
+    pass
 if 'prompt' not in st.session_state:
     st.session_state.prompt = None
     logger.info("prompt set to none")
