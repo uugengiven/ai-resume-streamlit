@@ -62,7 +62,11 @@ if st.session_state.messages[-1]["role"] != "assistant":
             message = {"role": "assistant", "content": response.response}
             st.session_state.messages.append(message)
 
+def click(prompt):
+    logger.info(prompt)
+    st.session_state.prompt = prompt
+
 
 with st.form("my_form"):
    prompt = st.text_area('ask about john')
-   st.form_submit_button('AMA', on_click=logger.info(prompt))
+   st.form_submit_button('AMA', on_click=click(prompt))
