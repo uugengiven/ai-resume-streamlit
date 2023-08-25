@@ -6,6 +6,7 @@ from llama_index import SimpleDirectoryReader
 from llama_index.memory import ChatMemoryBuffer
 import logging
 from opencensus.ext.azure.log_exporter import AzureEventHandler
+import time
 
 logger = logging.getLogger("Streamlit app")
 logger.setLevel(logging.INFO)
@@ -67,7 +68,7 @@ with st.form("my_form"):
    submit = st.form_submit_button('AMA')
 
 if submit:
-    st.write("stuck in a loop in submit")
+    st.write("stuck in a loop in submit" + time.time)
     st.session_state.prompt = prompt
     submit = False
 
