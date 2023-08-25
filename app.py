@@ -70,7 +70,7 @@ with st.form("my_form"):
 
 if submit:
     now = datetime.datetime.now()
-    st.write("stuck in a loop in submit" + now)
+    st.write("stuck in a loop in submit" + str(now))
     st.session_state.prompt = prompt
     submit = False
 
