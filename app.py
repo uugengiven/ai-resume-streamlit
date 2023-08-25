@@ -24,6 +24,9 @@ if "messages" not in st.session_state.keys():
 if 'prompt' not in st.session_state:
     st.session_state.prompt = None
 
+if 'old_prompt' not in st.session_state:
+    st.session_state.old_prompt = None
+
 @st.cache_resource(show_spinner=False)
 def load_data():
     with st.spinner(text="Loading and indexing John's history - give me a moment"):
@@ -44,8 +47,6 @@ chat_engine = index.as_chat_engine(
     memory=memory, 
     verbose=True
     )
-if 'prompt' not in st.session_state:
-    st.session_state.prompt = None
 
 #if prompt := st.chat_input("Your question"):
 if st.session_state.prompt:
@@ -68,7 +69,7 @@ with st.form("my_form"):
    submit = st.form_submit_button('AMA')
 
 if submit:
-    now = datetime.datetime.now
+    now = datetime.datetime.now()
     st.write("stuck in a loop in submit" + now)
     st.session_state.prompt = prompt
     submit = False
