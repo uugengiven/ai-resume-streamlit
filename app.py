@@ -6,7 +6,6 @@ from llama_index import SimpleDirectoryReader
 from llama_index.memory import ChatMemoryBuffer
 import logging
 from opencensus.ext.azure.log_exporter import AzureEventHandler
-import datetime
 
 logger = logging.getLogger("Streamlit app")
 logger.setLevel(logging.INFO)
@@ -14,18 +13,12 @@ logger.setLevel(logging.INFO)
 
 openai.api_key = st.secrets.openai_key
 st.header("John Lange's Personal Historian")
-hits = 0
 
 if "messages" not in st.session_state.keys():
     st.session_state.messages = [
         {"role": "assistant", "content": "What would you like to know about John Lange?"}
     ]
 
-if 'prompt' not in st.session_state:
-    st.session_state.prompt = None
-
-if 'old_prompt' not in st.session_state:
-    st.session_state.old_prompt = None
 
 @st.cache_resource(show_spinner=False)
 def load_data():
@@ -49,9 +42,9 @@ chat_engine = index.as_chat_engine(
     verbose=True
     )
 
-#if prompt := st.chat_input("Your question"):
-if st.session_state.prompt:
-    st.session_state.messages.append({"role": "user", "content": st.session_state.prompt})
+if prompt := st.chat_input("Your question"):
+    logger.info('question ' + prompt)
+    st.session_state.messages.append({"role": "user", "content": prompt})
 
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
@@ -60,18 +53,7 @@ for message in st.session_state.messages:
 if st.session_state.messages[-1]["role"] != "assistant":
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
-            response = chat_engine.chat(st.session_state.prompt)
+            response = chat_engine.chat(prompt)
             st.write(response.response)
             message = {"role": "assistant", "content": response.response}
             st.session_state.messages.append(message)
-
-with st.form("my_form"):
-   prompt = st.text_area('ask about john')
-   submit = st.form_submit_button('AMA')
-
-if submit:
-    now = datetime.datetime.now()
-    logger.info("stuck in a loop in submit" + str(now))
-    st.session_state.prompt = prompt
-    submit = False
-
