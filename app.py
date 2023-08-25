@@ -67,7 +67,7 @@ with st.form("my_form"):
    submit = st.form_submit_button('AMA')
 
 if submit:
-    logger.info(prompt)
+    st.write("stuck in a loop in submit")
     st.session_state.prompt = prompt
     submit = False
 
