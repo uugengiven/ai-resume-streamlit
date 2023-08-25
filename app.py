@@ -43,12 +43,19 @@ chat_engine = index.as_chat_engine(
     verbose=True
     )
 
-form = st.form("my_form")
 
-if prompt := form.chat_input("Your question"):
+with st.form("my_form"):
+   st.write("Inside the form")
+   my_number = st.slider('Pick a number', 1, 10)
+   my_color = st.selectbox('Pick a color', ['red','orange','green','blue','violet'])
+   st.form_submit_button('Submit my picks')
+
+# This is outside the form
+st.write(my_number)
+st.write(my_color)
+
+if prompt := st.chat_input("Your question"):
     st.session_state.messages.append({"role": "user", "content": prompt})
-
-form.form_submit_button("Submit")
 
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
