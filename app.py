@@ -43,7 +43,12 @@ chat_engine = index.as_chat_engine(
     verbose=True
     )
 
-if prompt := st.chat_input("Your question"):
+with st.form("my_form"):
+   prompt = st.text_area('ask about john')
+   st.form_submit_button('AMA')
+
+#if prompt := st.chat_input("Your question"):
+if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
 
 for message in st.session_state.messages:
@@ -59,10 +64,6 @@ if st.session_state.messages[-1]["role"] != "assistant":
             st.session_state.messages.append(message)
 
 
-with st.form("my_form"):
-   st.write("Inside the form")
-   question = st.text_area('ask about john')
-   st.form_submit_button('Submit my picks')
 
 # This is outside the form
-st.write(question)
+st.write(prompt)
