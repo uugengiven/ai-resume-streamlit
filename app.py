@@ -43,8 +43,12 @@ chat_engine = index.as_chat_engine(
     verbose=True
     )
 
-if prompt := st.chat_input("Your question"):
+form = st.form("my_form")
+
+if prompt := form.chat_input("Your question"):
     st.session_state.messages.append({"role": "user", "content": prompt})
+
+form.form_submit_button("Submit")
 
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
@@ -57,10 +61,3 @@ if st.session_state.messages[-1]["role"] != "assistant":
             st.write(response.response)
             message = {"role": "assistant", "content": response.response}
             st.session_state.messages.append(message)
-
-if st.session_state.prompt != prompt:
-    st.session_state.prompt = prompt
-    if st.session_state.prompt:
-        logger.info("st prompt = " + st.session_state.prompt)
-    if prompt:
-        logger.info(prompt)
