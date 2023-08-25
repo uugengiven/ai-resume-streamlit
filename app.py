@@ -13,6 +13,7 @@ logger.addHandler(AzureEventHandler(connection_string=st.secrets.azure_connectio
 
 openai.api_key = st.secrets.openai_key
 st.header("John Lange's Personal Historian")
+hits = 0
 
 if "messages" not in st.session_state.keys():
     st.session_state.messages = [
@@ -64,10 +65,4 @@ if st.session_state.messages[-1]["role"] != "assistant":
 
 with st.form("my_form"):
    prompt = st.text_area('ask about john')
-   submit = st.form_submit_button('AMA')
-
-if submit:
-    logger.info(prompt)
-    st.session_state.prompt = prompt
-# This is outside the form
-st.write(prompt)
+   st.form_submit_button('AMA', on_click=logger.info(prompt))
