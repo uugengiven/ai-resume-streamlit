@@ -10,7 +10,7 @@ import datetime
 
 logger = logging.getLogger("Streamlit app")
 logger.setLevel(logging.INFO)
-logger.addHandler(AzureEventHandler(connection_string=st.secrets.azure_connection_string))
+
 
 openai.api_key = st.secrets.openai_key
 st.header("John Lange's Personal Historian")
@@ -30,6 +30,7 @@ if 'old_prompt' not in st.session_state:
 @st.cache_resource(show_spinner=False)
 def load_data():
     with st.spinner(text="Loading and indexing John's history - give me a moment"):
+        logger.addHandler(AzureEventHandler(connection_string=st.secrets.azure_connection_string))
         logger.info('startup starting')
         reader = SimpleDirectoryReader(input_dir="./data", recursive=True)
         docs = reader.load_data()
