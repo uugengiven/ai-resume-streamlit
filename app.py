@@ -12,11 +12,11 @@ logger.setLevel(logging.INFO)
 
 
 openai.api_key = st.secrets.openai_key
-st.header("John Lange's Personal Historian")
+st.header("John Lange's Resume as a Service (RaaS)")
 
 if "messages" not in st.session_state.keys():
     st.session_state.messages = [
-        {"role": "assistant", "content": "What would you like to know about John Lange?"}
+        {"role": "assistant", "content": "What would you like to know about John Lange? Some suggestiongs to start: What is his work history? What are some projects he worked on? What are his skills?"}
     ]
 
 
