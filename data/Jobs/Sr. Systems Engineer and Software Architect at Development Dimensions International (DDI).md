@@ -18,12 +18,10 @@ Key projects: 
     
 - Facilitated the architecture team in designing the change plan from a tightly coupled messaging-based system to a loosely coupled microservices architecture, making sure all SMEs contributed and that no functionality was lost or forgotten. Researched and wrote architectural design documents on technologies and patterns, including RavensDB, RabbitMQ, SDN, CQRS, and microservices. 
 
-Development Dimensions International (DDI)
-Sr. Systems Engineer – Infrastructure 2013-2014 
+Development Dimensions International (DDI) - Sr. Systems Engineer – Infrastructure 2013-2014 
 
 Created automation for SQL, SSL Certificates, OS installs and other items to reduce day to day workload on System Engineers to give more time for project work. Worked to bridge knowledge gap between the infrastructure/systems group and the development group to break down communication barriers by pairing with engineers and developers, attending design meetings for both teams, and making sure concerns from both sides were heard by the other. 
 
-Development Dimensions International (DDI)
-Sr. DBA 2013, 2015 
+Development Dimensions International (DDI) - Sr. DBA 2013, 2015 
 
 Temporarily took over the Sr. DBA role when DBAs left to allow more time for a thorough candidate search and performed interviews for the position to find the right company fit. Reduced server communication noise, removing unnecessary alerts. Reduced alert thresholds for certain reports to help developer teams set attainable improvement goals, then worked with the development teams to reduce the number of long running procedures by more than 40%. Provided training and mentoring for the new DBAs, helping them transition into their role. 
