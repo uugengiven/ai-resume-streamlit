@@ -1,6 +1,7 @@
 Chief Technology Officer (CTO) and Founder at Looking for Group (LFG)
 Start: July 2015
 Years Active: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023
+Job titles held: CTO, Founder
 
 Founder of a coworking and gaming space in Pittsburgh, PA that focuses on community building. Technology lead, designing and building systems to make sure all functionality is available for non-technical users. Built tooling for keeping PCs and servers up to date and secure, with the ability to automatically log into different gaming services via shared accounts. Consult with multiple local companies to build up events and event spaces, including a multi-year contract for designing and opening The Rezzanine as a secondary location in Pittsburgh. 
 

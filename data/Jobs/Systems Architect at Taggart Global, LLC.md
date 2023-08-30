@@ -3,6 +3,7 @@ Systems Architect at Taggart Global, LLC
 Start: 2004
 End: 2012
 Years Active: 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012 
+Job titles held: System Architect, Application Architect, Programmer
 
 Application/System Architect 2006-2012 
 

@@ -1,7 +1,8 @@
-Sr. Systems Engineer and Software Architect at Development Dimensions International (DDI)
+Senior Systems Engineer and Software Architect at Development Dimensions International (DDI)
 Start:  2013
 End: 2015
 Years Active: 2013, 2014, 2015
+Job titles held: Senior Systems Engineer, Senior DBA
 
 Lead engineer in two teams, guiding both toward zero downtime by breaking down large, unwieldy monolith into a microservices architecture. Worked to improve the development culture with the introduction of pair programming, TDD, code reviews, user-centered design, and code craftsmanship. Provide expertise to the architecture team in infrastructure, SQL, and networking, reducing server costs and developer hours spent on rewrites. Designed and implemented automation strategies for deployment, working toward fully automated blue/green deployments. Designed and built custom functions into networking hardware and Windows servers for automated infrastructure deployment and building. Certified in behavioral interviewing and used as an expert interviewer by multiple teams for a range of technology jobs including systems administration, developer, and DBA candidates. 
 

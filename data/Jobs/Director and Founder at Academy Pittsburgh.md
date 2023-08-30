@@ -1,6 +1,7 @@
 Director and Founder at Academy Pittsburgh
 Start: December 2015
 Years Active: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023
+Job titles held: Director, Founder
 
 Co-Founder and Director of the first Pittsburgh coding boot camp, focusing on helping under-represented groups enter the tech workforce. Created state-licensed curriculum in back-end and front-end development, built partnerships with local foundations and companies, and successfully got more than 80% of graduating students a job in tech within a year of graduation. Contracted with local companies to give students real world experience and keep base tuition costs lower. Project manager and tech lead, guiding groups to successfully delivering dozens of products that have been used by tens of thousands of users, drastically reduced worker time through automation, and allowed multiple start-ups to gain hundreds of thousands in funding for further development based on MVPs produced by students. 
 

@@ -2,6 +2,7 @@ Consultant at Infobahn International Inc.
 Start: 1999
 End: 2004
 Years Active: 1999, 2000, 2001, 2002, 2003, 2004
+Job titles held: Consultant, Technical Support
 
 Technical Support and Consultant 
 
