@@ -1,0 +1,5 @@
+Academy Pittsburgh is a 12 week coding boot camp that is focusing on direct job training for people who are under-represented in tech. Founded in 2015 by John Lange and Josh Lucas, it has served over 250 people, successfully finding more than 80% of those graduates jobs in industry. Graduates receive a diploma and the school is licensed by the Pennsylvania State Board of Private Licensed Schools.
+
+Academy Pittsburgh trains students in C#, Ruby, Javascript, SQL, HTML, CSS, MVC, Ruby on Rails, and React. It also trains students to use git, TDD, pair programming, agile, scrum, kanban, miro, figma, and other industry standard practices and software. When students graduate, they are ready to immediately jump into work.
+
+Academy Pittsburgh regularly has multiple students hired by single companies as graduates are great at working together with other graduates from the program. This is true both at large companies, such as PNC, as well as tiny start-ups where Academy Pittsburgh graduates may end up being a significant part of the technology workforce. 
