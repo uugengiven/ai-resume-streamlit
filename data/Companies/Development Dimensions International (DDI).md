@@ -1,3 +1,4 @@
+Development Dimensions International (DDI)
 "At DDI, we’re innovators at heart. From our founding in 1970, we have dedicated ourselves to finding science-based solutions that truly change the lives of leaders and the people they lead.
 
 We’ve achieved this goal by being by the side of our clients to help them create and implement incredible leadership programs that deliver top results. From the first hello to measuring results, we commit ourselves to making your success, our success."

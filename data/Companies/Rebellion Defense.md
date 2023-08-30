@@ -1,1 +1,2 @@
+Rebellion Defense
 Operator of a mission-focused AI platform designed for the defense and security industry. The company's platform provides a fused view of the threat environment and adversary capabilities, automated orchestration and execution of operations across distributed hardware and software platforms, and strengthens cyber readiness for critical military assets against adversarial attacks, enabling clients to deter threats and drive mission success.

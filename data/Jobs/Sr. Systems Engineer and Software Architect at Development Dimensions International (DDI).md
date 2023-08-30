@@ -1,3 +1,4 @@
+Sr. Systems Engineer and Software Architect at Development Dimensions International (DDI)
 Start:  2013
 End: 2015
 Years Active: 2013, 2014, 2015
