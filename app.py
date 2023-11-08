@@ -16,7 +16,7 @@ st.header("John Lange's Resume as a Service (RaaS)")
 
 if "messages" not in st.session_state.keys():
     st.session_state.messages = [
-        {"role": "assistant", "content": "What would you like to know about John Lange? Some suggestiongs to start: What is his work history? What are some projects he worked on? What are his skills?"}
+        {"role": "assistant", "content": "What would you like to know about John Lange? Some suggestions to start: What is his work history? What are some projects he worked on? What are his skills?"}
     ]
 
 
